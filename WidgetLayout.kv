@@ -1,0 +1,47 @@
+BoxLayoutExample:
+
+<BoxLayoutExample>:
+    orientation: "horizontal"
+    Button:
+        text: "cool button"
+        color: 1, 1, 0, 1
+        background_color: 200, 0, 255, 1
+        size_hint: 1,1
+        on_press: print("wow")
+    Button:
+        text: "less cool button"
+        color: 0, 1, 0, 1
+        background_color: 255, 0, 0, 1
+        size_hint: 0.5,0.5
+        pos_hint: {"y":0.25}
+
+        on_press: App.get_running_app().stop()
+    Button:
+        text: "uncool button"
+        color: 1, 0, 1, 1
+        size_hint: 0.25,0.25
+        pos_hint: {"y":0.25}
+        on_press: App.get_running_app().stop()
+
+
+<MainWidget>:
+    Button:
+        text: "cool button"
+        size: "100dp", "60dp"
+        pos: "100dp","100dp"
+        on_press: App.get_running_app().stop()
+        on_release: print("no more button :(")
+
+    Button:
+        text: "less cool button"
+        size: "50dp", "30dp"
+        pos: "100dp","520dp"
+
+    Label:
+        text: "<-- cool button"
+        pos: "250dp","100dp"
+        color: 1, 0, 0, 1
+    Label:
+        text: "<-- less cool button"
+        pos: "250dp","500dp"
+        color: 1, 0, 1, 1
