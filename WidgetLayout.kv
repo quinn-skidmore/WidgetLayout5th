@@ -1,27 +1,32 @@
 BoxLayoutExample:
 
-<BoxLayoutExample>:
-    orientation: "horizontal"
-    Button:
-        text: "cool button"
-        color: 1, 1, 0, 1
-        background_color: 200, 0, 255, 1
-        size_hint: 1,1
-        on_press: print("wow")
-    Button:
-        text: "less cool button"
-        color: 0, 1, 0, 1
-        background_color: 255, 0, 0, 1
-        size_hint: 0.5,0.5
-        pos_hint: {"y":0.25}
+#<StackLayoutExample>:
+    #Button:
+        #text: "Press Me"
+        #size_hint: .2, .2
+    #Button:
+        #text: "B"
+        #size_hint: .2, .2
 
-        on_press: App.get_running_app().stop()
-    Button:
-        text: "uncool button"
-        color: 1, 0, 1, 1
-        size_hint: 0.25,0.25
-        pos_hint: {"y":0.35}
-        on_press: App.get_running_app().stop()
+    #Button:
+        #text: "C"
+        #size_hint: .2, .2
+
+<BoxLayoutExample>:
+    orientation: "vertical"
+    BoxLayout:
+        Button:
+            text: "Add Button"
+            color: 1, 1, 0, 1
+            background_color: 200, 0, 255, 1
+            on_press: root.add_button()
+        Button:
+            text: "Remove Button"
+            color: 0, 1, 0, 1
+            background_color: 255, 0, 0, 1
+            on_press: root.remove_button()
+    NewButtonLayout:
+        id: new
 
 
 <MainWidget>:
@@ -29,7 +34,7 @@ BoxLayoutExample:
         text: "cool button"
         size: "100dp", "60dp"
         pos: "100dp","100dp"
-        on_press: App.get_running_app().stop()
+        on_press: root.add_button()
         on_release: print("no more button :(")
 
     Button:
