@@ -1,6 +1,117 @@
-BoxLayoutExample:
+LayoutAssignment
 
-#<StackLayoutExample>:
+<LayoutAssignment>:
+    orientation: "vertical"
+    Label:
+        text: "Kivy Layout (Label)"
+        color: 1, 0, 0, 1
+        size_hint: 1, 0.1
+    BoxLayout:
+        padding: 10
+        spacing: 10
+        orientation: "horizontal"
+        BoxLayout:
+
+            spacing: 10
+            orientation:"horizontal"
+            Button:
+                background_color: 1, 0.5, 1, 1
+                text: "Button A"
+            Button:
+                background_color: 1, 0.5, 1, 1
+                text: "Button B"
+        BoxLayout:
+            spacing: 10
+            orientation: "vertical"
+            Button:
+                background_color: 0, 0, 1, 1
+                text: "Button C"
+            Button:
+                background_color: 0, 0, 1, 1
+                text: "Button D"
+            Button:
+                background_color: 0, 0, 1, 1
+                text: "Button D"
+        GridLayout:
+            spacing: 10
+            cols: 3
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "1"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "2"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "3"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "4"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "5"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "6"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "7"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "8"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "9"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "10"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "11"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "12"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "13"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "14"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "15"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "16"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "17"
+            Button:
+                background_color: 0, 1, 1, 1
+                text: "18"
+
+
+
+<ScrollViewExample@ScrollView>:
+    StackLayoutExample:
+        size_hint: 1
+
+<GridLayoutExample>:
+    cols:3
+    Button:
+        text: "A"
+    Button:
+        text: "B"
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+    Button:
+        text: "E"
+    Button:
+        text: "F"
+<StackLayoutExample>:
+    orientation: "lr-tb"
     #Button:
         #text: "Press Me"
         #size_hint: .2, .2
@@ -25,8 +136,6 @@ BoxLayoutExample:
             color: 0, 1, 0, 1
             background_color: 255, 0, 0, 1
             on_press: root.remove_button()
-    NewButtonLayout:
-        id: new
 
 
 <MainWidget>:
