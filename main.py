@@ -24,20 +24,24 @@ class MainWidget(Widget):
 
 
 class StackLayoutExample(StackLayout):
-    def __init__(self, last_created_button, **kwargs):
+    def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.last_created_button = last_created_button
+        self.new_button = None
+        self.last_created_button = None
         self.orientation = "lr-tb"
-        b = Button("Add Button", on_press=self.add_button(self))
+        self.add_widget(Button(text="Add Button", on_press=self.add_button))
 
-    def add_button(self):
-        new_button = Button(text="new button")
-        new_b = self.add_widget(new_button)
-        new_b.bind(on_press=self.remove_button())
-        self.last_created_button = new_b
+    def add_button(self,widget):
+        widget.color = (1,1,1,1)
+        new_button = Button(text="new button",on_press=self.remove_button)
+        print("test")
+        self.add_widget(new_button)
+        new_button.bind()
+        self.last_created_button = new_button
+        return
 
-    def remove_button(self):
-        self.remove_widget(self.last_created_button)
+    def remove_button(self,widget):
+        self.remove_widget(widget)
 
 
 class WidgetLayoutApp(App):
